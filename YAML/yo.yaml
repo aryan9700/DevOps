@@ -1,0 +1,34 @@
+#Key-Value pairs
+apple: "i am a red fruit"
+1: "this is my rank"
+
+--- #use to separe 2 different type of yaml files
+
+# lists
+- apple
+- mango
+- strawberry
+
+---
+
+#blocks
+fruits:
+ - Apple #Case Sensitive hai yaml
+ - Mango
+ - Banana
+# - apple show error align left
+# - apple added with upper line if align right
+ - apple #valid
+ - mango
+ - banana
+
+---
+
+cities: [newdelhi, mumbai]
+
+---
+
+{mango: "yello fruit", age: 56} 
+
+#no multiline comments here
+...  #to end the yaml document

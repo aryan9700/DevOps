@@ -1,0 +1,95 @@
+students: !!seq
+- name
+- marks
+- roll_no.
+
+#we can write it like this also
+student: !!seq [name, marks, rollno.]
+
+#Some of the sequence of the key is empty
+#sparse seq
+sparse seq:
+- hey
+- how
+- 
+- null
+- stop
+
+#nested sequence
+- 
+ - marks
+ - roll_no.
+ - date
+-
+ - mango
+ - banana
+ - apple
+
+#Key:value pairs are called maps
+# rahul: !!map 34 valid yaml vs code error
+
+#nested mapping: map within a map
+name: mohit kushwaha
+role:
+ age: 34
+ status: married
+ kids: 2
+
+ #same as 
+ name: mohit kushwaha
+roles: { age: 34, status: married, kids: 2 }
+
+#pairs: keys may have duplicate values
+#  !!pairs
+pairs example: !!pairs
+- job: student
+- job: teacher
+#same as
+pair example: !!pairs [job: student, job: teacher]
+#this will be an array of hashtables
+
+#!!set will allow you to have unique values
+names: !!set
+ ? kunal
+ ? apoorve
+ # error ? kunal
+ ? varun
+ ? Kunal
+
+#dictionary !!omap
+People: !!omap
+ - kunal:
+    name: Kunal kohli
+    age: 29
+    roll no: 1
+ - rahul:
+    name: Rahul ray
+    age: 23
+    roll no: 3
+
+#reusing some properties using anchor
+likings: &likes
+ fav fuits: mangoes
+ dislikes: grapes
+
+person1: 
+ name: Rahul Nanda
+ <<: *likes
+
+person2:
+ name: Mohit Nanda
+ <<: *likes
+ dislikes: berries
+
+#This is how it look like
+person2*:
+ name: Mohit Nanda
+ fav fuits: mangoes
+ dislikes: berries 
+
+person3:
+ name: Kunal Senapati
+ fav fuits: mangoes
+ dislikes: grapes
+
+

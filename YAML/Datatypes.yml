@@ -1,0 +1,59 @@
+#strings
+myself: Aryan Yadav
+fruit: "apple"
+job: 'devops'
+
+
+
+bio: |
+ I am a java developer.
+ I am a React intern.
+
+# Write a single line in multiple lines
+message: >
+ this 
+ will
+ all
+ be
+ in one single line.
+
+--- #no two same name obj in one block
+
+# same as 
+message: this will all be in one line.
+
+###########
+# Datatypes
+###########
+
+number: 54321
+float: 54.345
+boolean: NO # n, N, false, False, FALSE
+# same for true-> y, Y, yes
+
+#specify the datatype
+zero: !!int 0
+positive number: !!int 34
+negative number: !!int -345
+binaryNumber: !!int 011001
+octalexample: !!int 012345  
+hexaexample: !!int 0x12d4
+#commaValues: !!int +540_000   #540,000 valid yaml vscode problem
+
+# floating point numbers
+marks: !!float 6.89
+infinity: !!float .inf
+not a num: .nan
+#booleans: !!bool yes   #valid yaml vscode problem
+messages: !!str hawk
+exponentialNumbers: 6.023E56
+#binaryNum: !!int 0b11001 #valid yaml vs code problem
+
+#null
+surname: !!null null # Null, NULL, ~
+~: This is a anull Key
+
+# Date and time
+date: !!timestamp 2002-12-14 #by default UTC timezone if not specified
+indian time: 2001-12-15T02:02:02.10 +5:30
+no time zone: 2001-12-15T02:02:02

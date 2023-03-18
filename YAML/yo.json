@@ -1,0 +1,16 @@
+{"user": [ {
+    "fruits": [
+      "Apple",
+      "Mango",
+      "Banana",
+      "apple",
+      "mango",
+      "banana" ]
+},
+
+  {
+    "mango": "yello fruit",
+    "age": 56
+  }
+]
+}

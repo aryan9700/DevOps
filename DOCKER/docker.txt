@@ -1,0 +1,107 @@
+Earlier one application on one server.
+VM WARE-virtual machines solve this problem
+
+DOCKER solves problems like:-
+    1.Virtual machine problem we need a operating system.
+        =>one Operating System run all application in one Virtual Machine.
+        ..Containers-Users like Google, Microsoft uses same container concept before docker but they are not that
+        much popular.
+        ->
+    2.Dependencies management.
+    3.It work on my machine but it doesn't work on your machine.
+    4.Migration of code is also time consuming.
+    5.Contributing to opensource and setup project on your system.
+
+CONTAINERS:-
+    for Windows-DOCKER DESKTOP + WSL (windows subsystem for linux)
+    mac-VM's and DOCKER DESKTOP
+    linux - as it is
+
+#DOCKER RUNTIME  
+-run c =it works with OS , it start and stop the Containers.
+-containerd=role is to manage runc, it help in interaction with network,how to get data from network
+           =contain runtime for KuberNetes
+
+#DOCKER ENGINE, DOCKER DAEMON
+-We use to interact with Docker           
+
+docker container has some os to 
+#DOCKER COMMANDS
+docker run hello-world
+docker run -it ubuntu
+docker pull 
+docker container ls
+docker pull mysql //to pulldirect image
+docker images
+docker pull ubuntu:16.04 //to change version by default latest download
+root@...../# ps aux
+docker ps //to see currently running packages
+docker container exec -it b47a93d1 bash
+docker stop id(b4j2n5s8fb4j)
+docker ps -a //show all the container that are stocked
+docker rm id(b4j2n5s8fb4j)
+docker inspect ubuntu or (id)
+docker log id(b4j2n5s8fb4j) //all output displays.
+docker container prune -f //delete all the containers.
+docker run -d alpine ping www.civo.com
+docker ps //give id of the container in which backgroud is running
+docker run ubuntu echo Hey
+docker logs {id some letter(9694)}
+docker logs --since 5s 9694
+docker stop 9694
+docker rm 9694
+docker rmi alpine -f //to remove image alpine
+docker run -d -p 8080:80 nginx //to run in my own port
+
+#to share container with someone
+docker run -it ubuntu
+root@../# ls
+root@../# touch names.txt
+root@../# echo "Hey my name is ARYAN">> names.txt
+root@../# cat names.txt
+root@../# exit
+
+docker start 062a4654j
+docker exec -it 062a4654j bash
+
+root@../# ls
+docker exit
+
+docker commit -m "added names.txt file" 062a4654j names_ubuntu:1.01
+docker images
+docker ps
+docker stop
+docker images
+docker run -it names_ubuntu:1.01
+root@../# ls
+
+docker images -q //gives all ids 
+docker rmi $(docker images -q) //to remove all images
+docker rmi $(docker images -q) -f //to force
+
+ubuntu image is itself made up of 4 files
+called layers
+if mongodb uses any file which is already download by ubuntu
+so images share layers so that not need to download it again
+
+#CREATE Docker hub account
+docker login 
+put username password
+
+#NOW BUILT image
+touch Dockerfile //capital convention
+vi Dockerfile
+put valuses
+FROM ubuntu:16.04
+RUN apt-get update
+CMD["echo", "Hello World"] ,  to exit :x
+cat Dockerfile
+output print
+docker build -t myimage .
+^C% //to stop data transfer
+mkdir project
+mv Dockerfile project //relocate
+cd project
+docker build -t myimage .
+docker run myimage
+
